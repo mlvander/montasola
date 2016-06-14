@@ -8,9 +8,17 @@ https://docs.djangoproject.com/en/1.9/howto/deployment/wsgi/
 """
 
 import os
+import sys
+import site
+import django
 
-from django.core.wsgi import get_wsgi_application
+sys.path.append('/var/www/montasola.com/public_html/montasola')
+os.environ['DJANGO_SETTINGS_MODULE'] = 'montasola.settings'
+django.setup()
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "montasola.settings")
+import django.core.handlers.wsgi
+application = django.core.handlers.wsgi.WSGIHandler()
 
-application = get_wsgi_application()
+#from django.core.wsgi import get_wsgi_application
+#os.environ.setdefault("DJANGO_SETTINGS_MODULE", "montasola.settings")
+#application = get_wsgi_application()
