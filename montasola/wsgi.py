@@ -13,7 +13,7 @@ import site
 import django
 
 sys.path.append('/var/www/montasola.com/public_html/montasola')
-os.environ['DJANGO_SETTINGS_MODULE'] = 'montasola.settings'
+os.environ['DJANGO_SETTINGS_MODULE'] = 'settings'
 django.setup()
 
 import django.core.handlers.wsgi
