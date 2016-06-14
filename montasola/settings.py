@@ -52,10 +52,33 @@ MIDDLEWARE_CLASSES = [
 
 ROOT_URLCONF = 'montasola.urls'
 
+SITE_ID = 1
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+UPLOAD_DIR = os.path.join(os.path.join(BASE_DIR, 'static'),'uploads')
+
+PROJECT_ROOT = os.path.join(os.path.dirname(__file__), ".." )
+SITE_ROOT = PROJECT_ROOT
+
+STATIC_ROOT = os.path.join(SITE_ROOT, 'staticFiles')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'mediaFiles')
+
+STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+
+STATICFILES_DIRS = ( "static", "media", )
+
+if UPLOAD_DIR.find("/") != -1:
+    DIR_SEPARATOR = "/"
+    WEB_ROOT = "https://montasola.matthewvandermeer.com"
+else:
+    DIR_SEPARATOR = "\\"
+    WEB_ROOT = "http://127.0.0.1:8000"
+    
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [ os.path.join(SITE_ROOT, 'templates'), ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -63,6 +86,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.static',
             ],
         },
     },
@@ -76,8 +100,10 @@ WSGI_APPLICATION = 'montasola.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'OPTIONS': {
+            'read_default_file': './config.cnf',
+        },
     }
 }
 
@@ -113,9 +139,3 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.9/howto/static-files/
-
-STATIC_URL = '/static/'
