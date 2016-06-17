@@ -19,10 +19,11 @@ from django.contrib.auth import views
 
 from django.conf.urls.static import static
 from montasola import settings
-
+from imageManager.views import initialDatabaseSetup
 from montasola.views import homePage
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^initialDatabaseSetup', initialDatabaseSetup.as_view()),
     url(r'^', homePage.as_view()),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
