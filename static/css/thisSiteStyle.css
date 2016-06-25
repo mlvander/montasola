@@ -4,10 +4,24 @@ h1 {
 }
 
 .pageContent {
-    padding-top: 40px;
+    padding-top: 50px;
 }
 
+.galleryItem {
+    margin: 5px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius:25px;
+    text-align: center;
+    min-height: 240px;
+}
 
+.galleryItem img {
+    max-height: 240px;
+    max-width: 320px;
+    cursor: pointer;
+    border-radius:25px;
+}
 .navbar { 
     background-color: #992211;
     border-bottom: 2px solid #000;

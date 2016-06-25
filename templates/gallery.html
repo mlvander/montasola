@@ -1,0 +1,17 @@
+{% extends "siteTemplate.html" %} {% load staticfiles %}
+
+{% block content %}
+<h1>{{gallery.galleryID_fk.gallery}}</h1>
+<p>{{gallery.galleryID_fk.galleryDescription}}</p>
+<div>
+{% for image in gallery %}
+    <div class="col-sm-4">
+        <div class="galleryItem"  onclick="location.href='/static/images/{{image.imageID_fk.image}}'">>
+            <img src="/static/images/{{image.imageID_fk.image}}"><br />
+            <p>{{image.imageID_fk.imageDescription}}</p>
+        </div>
+    </div>
+{% endfor %}
+</div>
+
+{% endblock %}
