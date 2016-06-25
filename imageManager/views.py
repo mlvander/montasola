@@ -36,18 +36,18 @@ class initialDatabaseSetup(View):
 
         #need to use a direct Mysql cursor to access the dataset for this questionnaire
         cursor = connection.cursor()
-        cursor.execute("DELETE FROM imagemanager_galleryimage WHERE galleryimageID >0;")
-        cursor.execute("ALTER TABLE imagemanager_galleryimage AUTO_INCREMENT = 1;")
+        cursor.execute("DELETE FROM imageManager_galleryimage WHERE galleryimageID >0;")
+        cursor.execute("ALTER TABLE imageManager_galleryimage AUTO_INCREMENT = 1;")
         connection.commit()
         
         cursor = connection.cursor()
-        cursor.execute("DELETE FROM imagemanager_image WHERE imageID >0;")
-        cursor.execute("ALTER TABLE imagemanager_image AUTO_INCREMENT = 1;")
+        cursor.execute("DELETE FROM imageManager_image WHERE imageID >0;")
+        cursor.execute("ALTER TABLE imageManager_image AUTO_INCREMENT = 1;")
         connection.commit()
         
         cursor = connection.cursor()
-        cursor.execute("DELETE FROM imagemanager_gallery WHERE galleryID >0;")
-        cursor.execute("ALTER TABLE imagemanager_gallery AUTO_INCREMENT = 1;")
+        cursor.execute("DELETE FROM imageManager_gallery WHERE galleryID >0;")
+        cursor.execute("ALTER TABLE imageManager_gallery AUTO_INCREMENT = 1;")
         connection.commit()
             
         arena1 = Image(image = "arena1.jpg", imageDescription = "Our Indoor Riding Space", create_dt = datetime.now(), edit_dt = datetime.now())

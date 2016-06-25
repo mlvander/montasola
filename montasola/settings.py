@@ -72,7 +72,7 @@ STATICFILES_DIRS = ( "static", "media", )
 
 if UPLOAD_DIR.find("/") != -1:
     DIR_SEPARATOR = "/"
-    WEB_ROOT = "https://montasola.matthewvandermeer.com"
+    WEB_ROOT = "https://site.montasolafarms.com"
 else:
     DIR_SEPARATOR = "\\"
     WEB_ROOT = "http://127.0.0.1:8000"
