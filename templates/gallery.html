@@ -6,7 +6,7 @@
 <div>
 {% for image in gallery %}
     <div class="col-sm-4">
-        <div class="galleryItem"  onclick="location.href='/static/images/{{image.imageID_fk.image}}'">>
+        <div class="galleryItem"  onclick="location.href='/static/images/{{image.imageID_fk.image}}'">
             <img src="/static/images/{{image.imageID_fk.image}}"><br />
             <p>{{image.imageID_fk.imageDescription}}</p>
         </div>
