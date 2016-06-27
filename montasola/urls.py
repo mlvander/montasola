@@ -20,10 +20,15 @@ from django.contrib.auth import views
 from django.conf.urls.static import static
 from montasola import settings
 from imageManager.views import initialDatabaseSetup, imageGalleries, imageGallery
-from montasola.views import homePage
+from montasola.views import homePage, contact, about, schedule
+from events.views import events
 
 urlpatterns = [
     url(r'^$', homePage.as_view()),
+    url(r'^contact/$', contact.as_view()), 
+    url(r'^about/$', about.as_view()),
+    url(r'^schedule/$', schedule.as_view()),
+    url(r'^events/$', events.as_view()),
     url(r'^admin/', admin.site.urls),
     url(r'^gallery/$', imageGalleries.as_view()),
     url(r'^gallery/([0-9]{1,4})/$', imageGallery.as_view()),

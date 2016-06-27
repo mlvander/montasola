@@ -1,0 +1,26 @@
+{% extends "siteTemplate.html" %} {% load staticfiles %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-sm-6">
+            <h2>Ben VanderMeer</h2>
+            Owner, Operator, and General Mastermind<br />
+            <strong>Cell:</strong> 905-651-6816<br />
+                        
+            <h2>Montasola Farms</h2>
+            1500 Stevensville Rd<br />
+            Stevensville, ON<br />
+            <a href="mailto:montasolafarms@gmail.com">montasolafarms@gmail.com</a><br />
+            <br />
+            <a href="https://www.facebook.com/profile.php?id=100010597143284" target="_blank"><img src="/static/images/Facebook-create.png"></a><br />
+            <br />
+        </div>
+        
+        <div class="col-sm-6">
+            <iframe frameborder="0" height="350" marginheight="0" marginwidth="0" scrolling="no" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=1500+Stevensville+Rd&amp;aq=&amp;sll=43.253205,-79.645386&amp;sspn=1.566302,2.581787&amp;ie=UTF8&amp;hq=&amp;hnear=1500+Stevensville+Rd,+Fort+Erie,+Niagara+Regional+Municipality,+Ontario+L0S+1N0,+Canada&amp;t=h&amp;ll=42.919349,-79.051266&amp;spn=0.021999,0.036478&amp;z=14&amp;output=embed" width="425"></iframe>
+        </div>
+    </div>
+    
+
+{{ content }}
+{% endblock %}
